@@ -1,6 +1,6 @@
 Name:		hypnotix
 Version:	5.7
-Release:	1
+Release:	2
 Summary:	IPTV Player
 License:        GPL-3+
 URL:            https://github.com/linuxmint/hypnotix
@@ -37,6 +37,9 @@ IPTV Player
 
 %install
 cp -a usr %{buildroot}/
+install -d %{buildroot}/usr/lib64
+mv %{buildroot}/usr/lib/hypnotix %{buildroot}/usr/lib64/hypnotix
+find %{buildroot}/usr/bin %{buildroot}/usr/lib64 %{buildroot}/usr/share -type f -exec sed -i 's|/usr/lib/hypnotix|/usr/lib64/hypnotix|g' {} +
 find %{buildroot} -type f -exec sed -i -e "s/__DEB_VERSION__/%{version}/g" {} +
 
 %find_lang %{name}
@@ -47,5 +50,5 @@ find %{buildroot} -type f -exec sed -i -e "s/__DEB_VERSION__/%{version}/g" {} +
 %{_datadir}/glib-2.0/schemas/org.x.hypnotix.gschema.xml
 %{_datadir}/icons/hicolor/scalable/apps/hypnotix.svg
 %{_datadir}/hypnotix/*
-/usr/lib/hypnotix/*
+/usr/lib64/hypnotix/*
 %{_bindir}/hypnotix
