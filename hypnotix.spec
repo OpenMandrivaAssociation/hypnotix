@@ -1,6 +1,6 @@
 Name:		hypnotix
-Version:	5.7
-Release:	2
+Version:	5.8
+Release:	1
 Summary:	IPTV Player
 License:        GPL-3+
 URL:            https://github.com/linuxmint/hypnotix
