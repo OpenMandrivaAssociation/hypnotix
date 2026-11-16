@@ -1,5 +1,5 @@
 Name:		hypnotix
-Version:	5.8
+Version:	5.9
 Release:	1
 Summary:	IPTV Player
 License:        GPL-3+
